@@ -6,7 +6,22 @@ const server = http.createServer((req, res) => {
   if (req.url == "/file1") {
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/plain");
-    res.write("hey got the res");
+    res.write("file 1");
+    res.end();
+  } else if (req.url == "/file2") {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/plain");
+    res.write("file 2");
+    res.end();
+  } else if (req.url == "/file3") {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/plain");
+    res.write("file 3");
+    res.end();
+  } else {
+    res.statusCode = 404;
+    res.setHeader("Content-Type", "text/plain");
+    res.write("404");
     res.end();
   }
 });
